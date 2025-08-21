@@ -4,17 +4,20 @@ public class Student {
     private String id;
     private String name;
     private double score;
+    private String grade;
 
     public Student(String id, String name) {
         this.id = id;
         this.name = name;
         score = 0;
+        grade = "F";
     }
 
     public Student(String id, String name, double score) {
         this.id = id;
         this.name = name;
         this.score = score;
+        grade = grade();
     }
 
     public void changeName(String name) {
@@ -30,9 +33,18 @@ public class Student {
     }
 
     // TODO: design grading system for Student
-    public String grade()
-    {
-        return score > 60 ? "P" : "F";
+    public String grade() {
+        String grade = "F";
+        if (score >= 80){
+            grade = "A";
+        } else if (score >= 70) {
+            grade = "B";
+        }else if (score >= 60) {
+            grade = "C";
+        }else if (score >= 50){
+            grade = "D";
+        }
+        return grade;
     }
 
     public boolean isId(String id) {
