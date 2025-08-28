@@ -29,6 +29,7 @@ class StudentListTest {
         assertEquals("6xxxxxxxxxx", list.getStudents().get(2).getId());
         assertEquals(0, list.getStudents().get(2).getScore());
         assertEquals("F", list.getStudents().get(2).getGrade());
+
     }
 
     @Test
